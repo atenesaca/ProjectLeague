@@ -8,8 +8,8 @@ package cat.proven.project_league.model;
 import java.util.List;
 
 /**
- *
- * @author alumne
+ * Class Model: Methods.
+ * @author Andres, Rudy y Samar
  */
 public class Model {
     
@@ -135,7 +135,7 @@ public class Model {
      * @param player the player to add on the team.
      * @return 0 if added, 1 if exist , 2 if null, 3 user input error.
      */
-    public int enrolPlayerToTeam(Team team, Player player){
+        public int enrolPlayerToTeam(Team team, Player player){
         return 0;
     }
     

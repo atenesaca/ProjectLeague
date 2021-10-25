@@ -8,8 +8,8 @@ package cat.proven.project_league.model;
 import java.util.Objects;
 
 /**
- *
- * @author alumne
+ * ADT for Team.
+ * @author Andres, Rudy y Samar
  */
 public class Team {
     

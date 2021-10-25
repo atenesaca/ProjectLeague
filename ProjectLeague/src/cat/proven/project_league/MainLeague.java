@@ -6,7 +6,7 @@
 package cat.proven.project_league;
 /**
  *
- * @author Javatos
+ * @author Andres, Rudy y Samar
  */
 public class MainLeague {
     public static void main(String[] args) {

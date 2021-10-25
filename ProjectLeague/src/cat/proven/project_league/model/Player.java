@@ -9,8 +9,8 @@ import java.util.Date;
 import java.util.Objects;
 
 /**
- *
- * @author alumne
+ * ADT for a Player.
+ * @author Andres, Rudy y Samar
  */
 public class Player {
     
