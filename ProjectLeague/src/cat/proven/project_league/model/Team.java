@@ -88,15 +88,10 @@ public class Team {
     }
     
     //Equals and Hashcode
-
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 11 * hash + (int) (this.id ^ (this.id >>> 32));
-        hash = 11 * hash + Objects.hashCode(this.name);
-        hash = 11 * hash + Objects.hashCode(this.coach);
-        hash = 11 * hash + Objects.hashCode(this.category);
-        hash = 11 * hash + (int) (Double.doubleToLongBits(this.budget) ^ (Double.doubleToLongBits(this.budget) >>> 32));
+        int hash = 3;
+        hash = 19 * hash + (int) (this.id ^ (this.id >>> 32));
         return hash;
     }
 
@@ -115,20 +110,9 @@ public class Team {
         if (this.id != other.id) {
             return false;
         }
-        if (Double.doubleToLongBits(this.budget) != Double.doubleToLongBits(other.budget)) {
-            return false;
-        }
-        if (!Objects.equals(this.name, other.name)) {
-            return false;
-        }
-        if (!Objects.equals(this.coach, other.coach)) {
-            return false;
-        }
-        if (!Objects.equals(this.category, other.category)) {
-            return false;
-        }
         return true;
     }
+    
     
     //toString
 

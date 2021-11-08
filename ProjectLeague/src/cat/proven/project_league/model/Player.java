@@ -15,11 +15,11 @@ import java.util.Objects;
 public class Player {
     
     //attributes
+    private long id;
     private String name;
     private String surname;
     private Date birthday;
     private double salary;
-    private long fullname;
     private long idTeam;
     
     //constructor
@@ -27,29 +27,33 @@ public class Player {
     public Player() {
     }
 
-    public Player(String name, String surname, Date birthday, double salary, long fullname, long idTeam) {
+    public Player(long id, String name, String surname, Date birthday, double salary, long fullname, long idTeam) {
+        this.id = id;
         this.name = name;
         this.surname = surname;
         this.birthday = birthday;
         this.salary = salary;
-        this.fullname = fullname;
         this.idTeam = idTeam;
     }
     
     public Player(Player other) {
+        this.id = other.id;
         this.name = other.name;
         this.surname = other.surname;
         this.birthday = other.birthday;
         this.salary = other.salary;
-        this.fullname = other.fullname;
         this.idTeam = other.idTeam;
-    }
-
-    public Player(long fullname) {
-        this.fullname = fullname;
     }
     
     //Getters and Setters
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
     public String getName() {
         return name;
     }
@@ -82,14 +86,6 @@ public class Player {
         this.salary = salary;
     }
 
-    public long getFullname() {
-        return fullname;
-    }
-
-    public void setFullname(long fullname) {
-        this.fullname = fullname;
-    }
-
     public long getIdTeam() {
         return idTeam;
     }
@@ -100,17 +96,11 @@ public class Player {
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 97 * hash + Objects.hashCode(this.name);
-        hash = 97 * hash + Objects.hashCode(this.surname);
-        hash = 97 * hash + Objects.hashCode(this.birthday);
-        hash = 97 * hash + (int) (Double.doubleToLongBits(this.salary) ^ (Double.doubleToLongBits(this.salary) >>> 32));
-        hash = 97 * hash + (int) (this.fullname ^ (this.fullname >>> 32));
-        hash = 97 * hash + (int) (this.idTeam ^ (this.idTeam >>> 32));
+        int hash = 3;
+        hash = 23 * hash + (int) (this.id ^ (this.id >>> 32));
         return hash;
     }
 
-    //Equals and Hascode
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -123,38 +113,21 @@ public class Player {
             return false;
         }
         final Player other = (Player) obj;
-        if (Double.doubleToLongBits(this.salary) != Double.doubleToLongBits(other.salary)) {
-            return false;
-        }
-        if (this.fullname != other.fullname) {
-            return false;
-        }
-        if (this.idTeam != other.idTeam) {
-            return false;
-        }
-        if (!Objects.equals(this.name, other.name)) {
-            return false;
-        }
-        if (!Objects.equals(this.surname, other.surname)) {
-            return false;
-        }
-        if (!Objects.equals(this.birthday, other.birthday)) {
+        if (this.id != other.id) {
             return false;
         }
         return true;
     }
-
+    
     //toString
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("\n");
-        sb.append("Name = ").append(name);
+        sb.append(" id = ").append(id);
+        sb.append(" name = ").append(name);
         sb.append(", surname = ").append(surname);
         sb.append(", birthday = ").append(birthday);
         sb.append(", salary = ").append(salary);
-        sb.append(", fullname = ").append(fullname);
         sb.append(", idTeam = ").append(idTeam);
         return sb.toString();
     }
