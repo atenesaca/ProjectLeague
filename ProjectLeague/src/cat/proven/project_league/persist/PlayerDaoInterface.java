@@ -10,7 +10,7 @@ import cat.proven.project_league.model.Team;
 import java.util.List;
 
 /**
- * 
+ *
  * @author Andres, Rudy
  */
 public interface PlayerDaoInterface {
@@ -43,10 +43,8 @@ public interface PlayerDaoInterface {
      * add new player to the list.
      *
      * @param player the player to add
-     * @return  0 if added succesfully
-     *          1 if team already exist
-     *          2 if there data of the team is null;
-     *          3 user input error
+     * @return 0 if added succesfully 1 if team already exist 2 if there data of
+     * the team is null; 3 user input error
      */
     int addPlayer(Player player);
 
@@ -54,10 +52,8 @@ public interface PlayerDaoInterface {
      * modify data player.
      *
      * @param player the player to modify.
-     * @return  0 if added succesfully
-     *          1 if team already exist
-     *          2 if there data of the team is null;
-     *          3 user input error
+     * @return 0 if added succesfully 1 if team already exist 2 if there data of
+     * the team is null; 3 user input error
      */
     int modifyPlayer(Player player);
 
@@ -65,10 +61,8 @@ public interface PlayerDaoInterface {
      * delete the player.
      *
      * @param player the player to delete.
-     * @return  0 if added succesfully
-     *          1 if team already exist
-     *          2 if there data of the team is null;
-     *          3 user input error
+     * @return 0 if added succesfully 1 if team already exist 2 if there data of
+     * the team is null; 3 user input error
      */
     int removePlayer(Player player);
 
@@ -77,10 +71,8 @@ public interface PlayerDaoInterface {
      *
      * @param team the team to add in.
      * @param player the player to add on the team.
-     * @return  0 if added succesfully
-     *          1 if team already exist
-     *          2 if there data of the team is null;
-     *          3 user input error
+     * @return 0 if added succesfully 1 if team already exist 2 if there data of
+     * the team is null; 3 user input error
      */
     int enrolPlayerToTeam(Team team, Player player);
 
@@ -89,10 +81,8 @@ public interface PlayerDaoInterface {
      *
      * @param team the team to remove the player.
      * @param player the player to remove of the team.
-     * @return  0 if added succesfully
-     *          1 if team already exist
-     *          2 if there data of the team is null;
-     *          3 user input error
+     * @return 0 if added succesfully 1 if team already exist 2 if there data of
+     * the team is null; 3 user input error
      */
     int unenrolPlayerToTeam(Team team, Player player);
 }

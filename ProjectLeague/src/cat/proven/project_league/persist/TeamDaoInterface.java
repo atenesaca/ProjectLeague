@@ -9,9 +9,8 @@ import cat.proven.project_league.model.Team;
 import java.util.List;
 
 /**
- * Class team interface where appoint functions to develop 
- * in TeamDaoList
- * 
+ * Class team interface where appoint functions to develop in TeamDaoList
+ *
  * @author Andres, Rudy
  */
 public interface TeamDaoInterface {
@@ -51,10 +50,8 @@ public interface TeamDaoInterface {
      * Created a new team with data given by user.
      *
      * @param team the new team to add to the list.
-     * @return  0 if added succesfully
-     *          1 if team already exist
-     *          2 if there data of the team is null;
-     *          3 user input error
+     * @return 0 if added succesfully 1 if team already exist 2 if there data of
+     * the team is null; 3 user input error
      */
     int addTeam(Team team);
 
@@ -62,10 +59,8 @@ public interface TeamDaoInterface {
      * Modify the data of an existing team
      *
      * @param Team the team to modify.
-     * @return  0 if added succesfully
-     *          1 if team already exist
-     *          2 if there data of the team is null;
-     *          3 user input error
+     * @return 0 if added succesfully 1 if team already exist 2 if there data of
+     * the team is null; 3 user input error
      */
     int modifyTeam(Team Team);
 
@@ -73,10 +68,8 @@ public interface TeamDaoInterface {
      * The team to delte from the list.
      *
      * @param team the team to delete.
-     * @return  0 if added succesfully
-     *          1 if team already exist
-     *          2 if there data of the team is null;
-     *          3 user input error
+     * @return 0 if added succesfully 1 if team already exist 2 if there data of
+     * the team is null; 3 user input error
      */
     int removeTeam(Team team);
 }

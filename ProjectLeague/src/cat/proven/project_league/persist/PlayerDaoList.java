@@ -14,21 +14,22 @@ import java.util.List;
  *
  * @author alumne
  */
-public class PlayerDaoList implements PlayerDaoInterface{
+public class PlayerDaoList implements PlayerDaoInterface {
+
     public static PlayerDaoList instance;
     private final List<Player> data;
-    
-    public PlayerDaoList(){
+
+    public PlayerDaoList() {
         data = new ArrayList<>();
     }
-    
-    public static PlayerDaoList getInstance(){
-        if(instance == null){
+
+    public static PlayerDaoList getInstance() {
+        if (instance == null) {
             instance = new PlayerDaoList();
         }
         return instance;
     }
-    
+
     @Override
     public Player findPlayerById(Player player) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -68,5 +69,5 @@ public class PlayerDaoList implements PlayerDaoInterface{
     public int unenrolPlayerToTeam(Team team, Player player) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }

@@ -4,13 +4,15 @@
  * and open the template in the editor.
  */
 package cat.proven.project_league;
+
 /**
  *
  * @author Andres, Rudy y Samar
  */
 public class MainLeague {
+
     public static void main(String[] args) {
         // TODO code application logic here
     }
-    
+
 }

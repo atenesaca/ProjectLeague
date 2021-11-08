@@ -5,23 +5,21 @@
  */
 package cat.proven.project_league.model;
 
-import java.util.Objects;
-
 /**
  * ADT for Team.
+ *
  * @author Andres, Rudy y Samar
  */
 public class Team {
-    
+
     //attributes
     private long id;
     private String name;
     private String coach;
     private String category;
     private double budget;
-    
-    //constructor
 
+    //constructor
     public Team() {
     }
 
@@ -32,7 +30,7 @@ public class Team {
         this.category = category;
         this.budget = budget;
     }
-    
+
     public Team(Team other) {
         this.id = other.id;
         this.name = other.name;
@@ -44,9 +42,8 @@ public class Team {
     public Team(String name) {
         this.name = name;
     }
-    
-    //Getters and Setters
 
+    //Getters and Setters
     public long getId() {
         return id;
     }
@@ -86,7 +83,7 @@ public class Team {
     public void setBudget(double budget) {
         this.budget = budget;
     }
-    
+
     //Equals and Hashcode
     @Override
     public int hashCode() {
@@ -112,10 +109,8 @@ public class Team {
         }
         return true;
     }
-    
-    
-    //toString
 
+    //toString
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

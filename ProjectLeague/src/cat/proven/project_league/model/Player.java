@@ -6,14 +6,14 @@
 package cat.proven.project_league.model;
 
 import java.util.Date;
-import java.util.Objects;
 
 /**
  * ADT for a Player.
+ *
  * @author Andres, Rudy y Samar
  */
 public class Player {
-    
+
     //attributes
     private long id;
     private String name;
@@ -21,9 +21,8 @@ public class Player {
     private Date birthday;
     private double salary;
     private long idTeam;
-    
-    //constructor
 
+    //constructor
     public Player() {
     }
 
@@ -35,7 +34,7 @@ public class Player {
         this.salary = salary;
         this.idTeam = idTeam;
     }
-    
+
     public Player(Player other) {
         this.id = other.id;
         this.name = other.name;
@@ -44,7 +43,7 @@ public class Player {
         this.salary = other.salary;
         this.idTeam = other.idTeam;
     }
-    
+
     //Getters and Setters
     public long getId() {
         return id;
@@ -118,7 +117,7 @@ public class Player {
         }
         return true;
     }
-    
+
     //toString
     @Override
     public String toString() {
@@ -131,7 +130,5 @@ public class Player {
         sb.append(", idTeam = ").append(idTeam);
         return sb.toString();
     }
-    
-    
-    
+
 }

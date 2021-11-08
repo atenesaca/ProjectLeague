@@ -10,32 +10,31 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * DAO class for Team persistence in a list.
- * Implements singleton pattern.
+ * DAO class for Team persistence in a list. Implements singleton pattern.
+ *
  * @author Andres, Rudy
  */
-public class TeamDaoList implements TeamDaoInterface{
-    
+public class TeamDaoList implements TeamDaoInterface {
+
     private static TeamDaoList instance;
     private final List<Team> data;
-    
-    private TeamDaoList(){
+
+    private TeamDaoList() {
         data = new ArrayList<>();
     }
-    
-    public static TeamDaoList getInstance(){
-      if (instance == null) {
-           instance = new TeamDaoList();
-      }
-      return instance;
+
+    public static TeamDaoList getInstance() {
+        if (instance == null) {
+            instance = new TeamDaoList();
+        }
+        return instance;
     }
 
     @Override
     public List<Team> findAllTeams() {
-        if(data.isEmpty()){
+        if (data.isEmpty()) {
             return null;
-        }
-        else {
+        } else {
             return data;
         }
     }
@@ -60,7 +59,7 @@ public class TeamDaoList implements TeamDaoInterface{
     public int addTeam(Team team) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
     @Override
     public int modifyTeam(Team Team) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -70,5 +69,5 @@ public class TeamDaoList implements TeamDaoInterface{
     public int removeTeam(Team team) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }
