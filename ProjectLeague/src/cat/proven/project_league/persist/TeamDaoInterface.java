@@ -15,57 +15,63 @@ import java.util.List;
 public interface TeamDaoInterface {
 
     /**
-     * List all teams
+     * Displays all the teams in the list
      *
      * @return list of all the teams
      */
     List<Team> findAllTeams();
 
     /**
-     * search the team by id.
+     * Display all the teams searched by id given by user.
      *
-     * @param id the id of the team.
-     * @return the team
+     * @param team the team with the id to find.
+     * @return teams with the same searched id
      */
-    Team findTeamById(long id);
+    Team findTeamById(Team team);
 
     /**
-     * search the team by name.
+     * Display teams which name equals with the name to search
      *
-     * @param name the name of the team.
-     * @return the team
+     * @param team the theam with the name to find.
+     * @return teams with the name searched
      */
-    Team findTeamByName(String name);
+    Team findTeamByName(Team team);
 
     /**
-     * search the team by category.
+     * Search teams with the same category given by user.
      *
-     * @param Category the category of the team.
-     * @return the team
+     * @param team the team with the category to find.
+     * @return teams with the same category
      */
-    List<Team> findTeamsByCategory(String Category);
+    List<Team> findTeamsByCategory(Team team);
 
     /**
-     * create a new team
+     * Created a new team with data given by user.
      *
-     * @param team the team to add.
-     * @return number of entries affected by the operation
+     * @param team the new team to add to the list.
+     * @return  0 if an error ocurred while deleting the team
+     *          1 if added succesfully
+     *          2 if there is an error with the format of the data
      */
     int addTeam(Team team);
 
     /**
-     * modify the data of the team.
+     * Modify the data of an existing team
      *
      * @param Team the team to modify.
-     * @return number of entries affected by the operation
+     * @return  0 if an error ocurred while deleting the team
+     *          1 if added succesfully
+     *          2 if there is an error with the format of the data
      */
     int modifyTeam(Team Team);
 
     /**
-     * delete a team.
+     * The team to delte from the list.
      *
      * @param team the team to delete.
-     * @return number of entries affected by the operation
+     * @return  0 if an error ocurred while deleting the team
+     *          1 if added succesfully
+     *          2 if there is an error with the format of the data
      */
     int removeTeam(Team team);
 }
