@@ -41,17 +41,18 @@ public class TeamDaoList implements TeamDaoInterface{
     }
 
     @Override
-    public Team findTeamById(long id) {
+    public Team findTeamById(Team team) {
+        int index = data.indexOf(team.getId());
+        return data.get(index);
+    }
+
+    @Override
+    public Team findTeamByName(Team team) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Team findTeamByName(String name) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public List<Team> findTeamsByCategory(String Category) {
+    public List<Team> findTeamsByCategory(Team team) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -59,7 +60,7 @@ public class TeamDaoList implements TeamDaoInterface{
     public int addTeam(Team team) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    
     @Override
     public int modifyTeam(Team Team) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
