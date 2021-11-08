@@ -22,7 +22,7 @@ public class PlayerDaoList implements PlayerDaoInterface{
         data = new ArrayList<>();
     }
     
-    public static PlayerDaoList instance(){
+    public static PlayerDaoList getInstance(){
         if(instance == null){
             instance = new PlayerDaoList();
         }
