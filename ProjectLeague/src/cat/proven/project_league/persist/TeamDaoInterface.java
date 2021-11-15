@@ -16,60 +16,57 @@ import java.util.List;
 public interface TeamDaoInterface {
 
     /**
-     * Displays all the teams in the list
+     * Search all teams
      *
-     * @return list of all the teams
+     * @return the data of the teams
      */
     List<Team> findAllTeams();
 
     /**
-     * Display all the teams searched by id given by user.
+     * Search all teams by id
      *
-     * @param team the team with the id to find.
+     * @param id the id of the team
      * @return teams with the same searched id
      */
-    Team findTeamById(Team team);
+    Team findTeamById(long id);
 
     /**
-     * Display teams which name equals with the name to search
+     * Search teams by name
      *
-     * @param team the theam with the name to find.
+     * @param name the name to find.
      * @return teams with the name searched
      */
-    Team findTeamByName(Team team);
+    Team findTeamByName(String name);
 
     /**
-     * Search teams with the same category given by user.
+     * Search teams with the same category.
      *
-     * @param team the team with the category to find.
+     * @param category the category to find.
      * @return teams with the same category
      */
-    List<Team> findTeamsByCategory(Team team);
+    List<Team> findTeamsByCategory(String category);
 
     /**
-     * Created a new team with data given by user.
+     * Created a new team.
      *
-     * @param team the new team to add to the list.
-     * @return 0 if added succesfully 1 if team already exist 2 if there data of
-     * the team is null; 3 user input error
+     * @param team the new team to add.
+     * @return true if the player is added correctly, false otherwise.
      */
-    int addTeam(Team team);
+    boolean addTeam(Team team);
 
     /**
-     * Modify the data of an existing team
+     * Modify the data of a team.
      *
      * @param Team the team to modify.
-     * @return 0 if added succesfully 1 if team already exist 2 if there data of
-     * the team is null; 3 user input error
+     * @return true if the player is modified correctly, false otherwise.
      */
-    int modifyTeam(Team Team);
+    boolean modifyTeam(Team Team);
 
     /**
-     * The team to delte from the list.
+     * The team to delete.
      *
      * @param team the team to delete.
-     * @return 0 if added succesfully 1 if team already exist 2 if there data of
-     * the team is null; 3 user input error
+     * @return true if the player is removed correctly, false otherwise.
      */
-    int removeTeam(Team team);
+    boolean removeTeam(Team team);
 }

@@ -31,12 +31,12 @@ public class PlayerDaoList implements PlayerDaoInterface {
     }
 
     @Override
-    public Player findPlayerById(Player player) {
+    public Player findPlayerById(long id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Player> findPlayerByFullName(Player player) {
+    public List<Player> findPlayerByFullName(String fullname) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -46,17 +46,17 @@ public class PlayerDaoList implements PlayerDaoInterface {
     }
 
     @Override
-    public int addPlayer(Player player) {
+    public boolean addPlayer(Player player) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public int modifyPlayer(Player player) {
+    public boolean modifyPlayer(Player player) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public int removePlayer(Player player) {
+    public boolean removePlayer(Player player) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

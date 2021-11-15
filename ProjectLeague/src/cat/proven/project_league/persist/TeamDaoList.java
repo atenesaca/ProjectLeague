@@ -40,33 +40,32 @@ public class TeamDaoList implements TeamDaoInterface {
     }
 
     @Override
-    public Team findTeamById(Team team) {
-        int index = data.indexOf(team.getId());
-        return data.get(index);
+    public Team findTeamById(long id) {
+        return null;
     }
 
     @Override
-    public Team findTeamByName(Team team) {
+    public Team findTeamByName(String surname) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Team> findTeamsByCategory(Team team) {
+    public List<Team> findTeamsByCategory(String category) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public int addTeam(Team team) {
+    public boolean addTeam(Team team) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public int modifyTeam(Team Team) {
+    public boolean modifyTeam(Team Team) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public int removeTeam(Team team) {
+    public boolean removeTeam(Team team) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

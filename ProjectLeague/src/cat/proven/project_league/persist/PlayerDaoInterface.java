@@ -10,7 +10,8 @@ import cat.proven.project_league.model.Team;
 import java.util.List;
 
 /**
- *
+ * Class player interface where appoint functions to develop in PlayerDaoList
+ * 
  * @author Andres, Rudy
  */
 public interface PlayerDaoInterface {
@@ -18,24 +19,25 @@ public interface PlayerDaoInterface {
     /**
      * search the player by id.
      *
-     * @param player the player with the id to find
-     * @return the player
+     * @param id the id to find
+     * @return the data of the player
      */
-    Player findPlayerById(Player player);
+    Player findPlayerById(long id);
 
     /**
      * search the player by fullName.
-     *
-     * @param player the player with the name
+     * 
+     * @param fullname the name and the surname of the player
      * @return the player
      */
-    List<Player> findPlayerByFullName(Player player);
+    List<Player> findPlayerByFullName(String fullname);
 
     /**
      * search players by Team.
      *
      * @param team the data of the team to find the players
-     * @return the player
+     * @return  the players of a especific team,
+     *          if team is empty or don't exists this will not return players
      */
     List<Player> findPlayersByTeam(Team team);
 
@@ -43,36 +45,39 @@ public interface PlayerDaoInterface {
      * add new player to the list.
      *
      * @param player the player to add
-     * @return 0 if added succesfully 1 if team already exist 2 if there data of
-     * the team is null; 3 user input error
+     * @return true if the player is added correctly, false otherwise.
      */
-    int addPlayer(Player player);
+    boolean addPlayer(Player player);
 
     /**
      * modify data player.
      *
      * @param player the player to modify.
-     * @return 0 if added succesfully 1 if team already exist 2 if there data of
-     * the team is null; 3 user input error
+     * @return true if the player is modified correctly, false otherwise.
      */
-    int modifyPlayer(Player player);
+    boolean modifyPlayer(Player player);
 
     /**
      * delete the player.
      *
      * @param player the player to delete.
-     * @return 0 if added succesfully 1 if team already exist 2 if there data of
-     * the team is null; 3 user input error
+     * @return true if the player is deleted correctly, false otherwise.
      */
-    int removePlayer(Player player);
+    boolean removePlayer(Player player);
 
     /**
      * add player to team.
      *
      * @param team the team to add in.
      * @param player the player to add on the team.
-     * @return 0 if added succesfully 1 if team already exist 2 if there data of
-     * the team is null; 3 user input error
+     * @return 1 if the player is enrolled correcly in the team,
+     *          -1 if the team don't exists
+     *          -2 if the player don't exists
+     *          -3 if the data is null
+     *          -4 if player can not be added to a team
+     *             if exceed the budget (it will not added)
+     *          -5 if the player is already in a team
+     *          -6 if the player is already in the team
      */
     int enrolPlayerToTeam(Team team, Player player);
 
@@ -81,8 +86,11 @@ public interface PlayerDaoInterface {
      *
      * @param team the team to remove the player.
      * @param player the player to remove of the team.
-     * @return 0 if added succesfully 1 if team already exist 2 if there data of
-     * the team is null; 3 user input error
+     * @return 1 if the player is unenrolled correcly in a team,
+     *          -1 if the team don't exists
+     *          -2 if the player don't exists
+     *          -3 if the data is null
+     *          -4 if the players is not in the team
      */
     int unenrolPlayerToTeam(Team team, Player player);
 }
