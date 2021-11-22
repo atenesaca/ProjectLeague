@@ -26,7 +26,7 @@ public interface TeamDaoInterface {
      * Search all teams by id
      *
      * @param id the id of the team
-     * @return teams with the same searched id
+     * @return a team with the same searched id, else return null
      */
     Team findTeamById(long id);
 
@@ -34,7 +34,8 @@ public interface TeamDaoInterface {
      * Search teams by name
      *
      * @param name the name to find.
-     * @return teams with the name searched
+     * @return  a team with the name searched, else return null
+     *          team can not have the same name
      */
     Team findTeamByName(String name);
 
@@ -42,7 +43,7 @@ public interface TeamDaoInterface {
      * Search teams with the same category.
      *
      * @param category the category to find.
-     * @return teams with the same category
+     * @return teams with the same category, else return an empty list
      */
     List<Team> findTeamsByCategory(String category);
 
@@ -50,23 +51,26 @@ public interface TeamDaoInterface {
      * Created a new team.
      *
      * @param team the new team to add.
-     * @return true if the player is added correctly, false otherwise.
+     * @return  true if the team is added correctly, false otherwise.
+     *          only add teams with different names and id, there can not be teams with
+     *          the same name and id
      */
     boolean addTeam(Team team);
 
     /**
      * Modify the data of a team.
      *
-     * @param Team the team to modify.
-     * @return true if the player is modified correctly, false otherwise.
+     * @param team the data of the team to modify, the id will not be modified
+     * @return true if the team is modified correctly, false otherwise.
      */
-    boolean modifyTeam(Team Team);
+    boolean modifyTeam(Team team);
 
     /**
-     * The team to delete.
+     * Delete a team
      *
      * @param team the team to delete.
-     * @return true if the player is removed correctly, false otherwise.
+     * @return search if the team exist ,
+     *         true if the team is removed correctly, false otherwise.
      */
     boolean removeTeam(Team team);
 }

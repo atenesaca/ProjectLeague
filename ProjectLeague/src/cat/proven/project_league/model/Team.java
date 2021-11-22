@@ -39,8 +39,8 @@ public class Team {
         this.budget = other.budget;
     }
 
-    public Team(String name) {
-        this.name = name;
+    public Team(long id) {
+        this.id = id;
     }
 
     //Getters and Setters
