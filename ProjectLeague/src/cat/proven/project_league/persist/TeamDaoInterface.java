@@ -9,7 +9,7 @@ import cat.proven.project_league.model.Team;
 import java.util.List;
 
 /**
- * Class team interface where appoint functions to develop in TeamDaoList
+ * Class team interface where designate functions to develop in TeamDaoList
  *
  * @author Andres, Rudy
  */

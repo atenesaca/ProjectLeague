@@ -31,12 +31,11 @@ public class Team {
         this.budget = budget;
     }
 
-    public Team(Team other) {
-        this.id = other.id;
-        this.name = other.name;
-        this.coach = other.coach;
-        this.category = other.category;
-        this.budget = other.budget;
+    public Team(String name, String coach, String category, double budget) {
+        this.name = name;
+        this.coach = coach;
+        this.category = category;
+        this.budget = budget;
     }
 
     public Team(long id) {

@@ -10,7 +10,7 @@ import cat.proven.project_league.model.Team;
 import java.util.List;
 
 /**
- * Class player interface where appoint functions to develop in PlayerDaoList
+ * Class player interface where designate functions to develop in PlayerDaoList
  * 
  * @author Andres, Rudy
  */
@@ -70,14 +70,11 @@ public interface PlayerDaoInterface {
      *
      * @param team the team to add in.
      * @param player the player to add on the team.
-     * @return 1 if the player is enrolled correcly in the team,
-     *          -1 if the team don't exists
-     *          -2 if the player don't exists
-     *          -3 if the data is null
-     *          -4 if player can not be added to a team
-     *             if exceed the budget (it will not added)
-     *          -5 if the player is already in a team
-     *          -6 if the player is already in the team
+     * @return   1 if the player is enrolled correcly in the team,
+     *          -1 if player can not be added to a team
+     *            if exceed the budget (it will not added)
+     *          -2 if the player is already in a team
+     *              (-1 in id team if player dont have a team)
      */
     int enrolPlayerToTeam(Team team, Player player);
 
@@ -87,10 +84,8 @@ public interface PlayerDaoInterface {
      * @param team the team to remove the player.
      * @param player the player to remove of the team.
      * @return 1 if the player is unenrolled correcly in a team,
-     *          -1 if the team don't exists
-     *          -2 if the player don't exists
-     *          -3 if the data is null
-     *          -4 if the players is not in the team
+     *        -1 if the players is not in a team
+     *          (-1 in id team if player dont have a team)
      */
     int unenrolPlayerToTeam(Team team, Player player);
 }

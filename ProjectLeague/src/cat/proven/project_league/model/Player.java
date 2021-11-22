@@ -26,7 +26,7 @@ public class Player {
     public Player() {
     }
 
-    public Player(long id, String name, String surname, Date birthday, double salary, long fullname, long idTeam) {
+    public Player(long id, String name, String surname, Date birthday, double salary, long idTeam) {
         this.id = id;
         this.name = name;
         this.surname = surname;
@@ -35,13 +35,16 @@ public class Player {
         this.idTeam = idTeam;
     }
 
-    public Player(Player other) {
-        this.id = other.id;
-        this.name = other.name;
-        this.surname = other.surname;
-        this.birthday = other.birthday;
-        this.salary = other.salary;
-        this.idTeam = other.idTeam;
+    public Player(String name, String surname, Date birthday, double salary, long idTeam) {
+        this.name = name;
+        this.surname = surname;
+        this.birthday = birthday;
+        this.salary = salary;
+        this.idTeam = idTeam;
+    }
+    
+    public Player(long id) {
+        this.id = id;
     }
 
     //Getters and Setters

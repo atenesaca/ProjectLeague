@@ -21,6 +21,7 @@ public class TeamDaoList implements TeamDaoInterface {
 
     private TeamDaoList() {
         data = new ArrayList<>();
+        loadTestData();
     }
 
     public static TeamDaoList getInstance() {
@@ -118,6 +119,13 @@ public class TeamDaoList implements TeamDaoInterface {
         }
         
         return flag;
+    }
+    
+    public void loadTestData(){
+        Team t1 = new Team(01, "Equipo1", "Pepe", "cat01", 5000000);
+        Team t2 = new Team(02, "Equipo2", "Jorge", "cat02", 3000000);
+        Team t3 = new Team(03, "Equipo3", "Luis", "cat03", 2000000);
+        Team t4 = new Team(04, "Equipo3", "Carlos", "cat03", 2000000);
     }
 
 }

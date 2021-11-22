@@ -32,42 +32,122 @@ public class PlayerDaoList implements PlayerDaoInterface {
 
     @Override
     public Player findPlayerById(long id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Player player = new Player(id);
+        Player player1 = null;
+
+        for (Player p : data) {
+            if (p.equals(player)) {
+                player1 = p;
+            }
+        }
+        return player1;
     }
 
     @Override
     public List<Player> findPlayerByFullName(String fullname) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<Player> list = new ArrayList<>();
+
+        for (Player player : data) {
+            String name = player.getName();
+            String surname = player.getSurname();
+
+            String fullname1 = name + " " + surname;
+
+            if (fullname1.equals(fullname)) {
+                list.add(player);
+            }
+        }
+
+        return list;
     }
 
     @Override
     public List<Player> findPlayersByTeam(Team team) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<Player> list = new ArrayList<>();
+
+        for (Player player : data) {
+            if (player.getIdTeam() == team.getId()) {
+                list.add(player);
+            }
+        }
+
+        return list;
     }
 
     @Override
     public boolean addPlayer(Player player) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        boolean flag = false;
+
+        int id = data.size();
+        id += 1;
+        player.setId(id);
+
+        if (data.add(player)) {
+            flag = true;
+        }
+
+        return flag;
     }
 
     @Override
     public boolean modifyPlayer(Player player) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        boolean flag = false;
+        if (data.contains(player)) {
+            for (Player player1 : data) {
+                if (player1.equals(player)) {
+                    player1.setName(player.getName());
+                    player1.setSurname(player.getSurname());
+                    player1.setBirthday(player.getBirthday());
+                    player1.setSalary(player.getSalary());
+                }
+            }
+            flag = true;
+        }
+        return flag;
     }
 
     @Override
     public boolean removePlayer(Player player) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        boolean flag = false;
+
+        if (data.contains(player)) {
+            data.remove(player);
+        }
+
+        return flag;
     }
 
     @Override
     public int enrolPlayerToTeam(Team team, Player player) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int flag = 0;
+
+        double budget = team.getBudget() - player.getSalary();
+
+        if (player.getIdTeam() != -1) {
+            flag = -2;
+        } else {
+            if (budget <= 0) {
+                flag = -1;
+            } else {
+                player.setIdTeam(team.getId());
+                flag = 1;
+            }
+        }
+        return flag;
     }
 
     @Override
     public int unenrolPlayerToTeam(Team team, Player player) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int flag = 0;
+        
+
+        if (player.getIdTeam() == -1) {
+            flag = -1;
+        } else {
+            player.setIdTeam(-1);
+            flag = 1;
+        }
+        return flag;
     }
 
 }
